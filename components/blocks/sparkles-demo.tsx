@@ -16,7 +16,7 @@ const clients = [
 
 export function SparklesPartnersSection() {
   return (
-    <section className="relative overflow-hidden bg-gray-900 py-20">
+    <section className="relative overflow-hidden bg-gray-900 pt-20 pb-32">
       {/* Ambient sparkles — orange, low density, subtle */}
       <Sparkles
         density={350}
@@ -30,6 +30,7 @@ export function SparklesPartnersSection() {
       {/* Radial gradient accent */}
       <div className="absolute inset-0 before:absolute before:inset-0 before:bg-[radial-gradient(ellipse_at_top_center,rgba(249,115,22,0.12),transparent_65%)]" />
 
+      {/* Content — z-10 keeps it above the SVG curve */}
       <div className="relative z-10">
         {/* Heading */}
         <div className="mx-auto max-w-2xl px-6 text-center mb-14">
@@ -71,13 +72,13 @@ export function SparklesPartnersSection() {
             blurIntensity={0.4}
           />
         </div>
+      </div>
 
-        {/* Bottom curved divider (mirrors the demo aesthetic) */}
-        <div className="absolute -bottom-1 left-0 right-0 overflow-hidden leading-none">
-          <svg viewBox="0 0 1440 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
-            <path d="M0 40 C360 0 1080 0 1440 40 L1440 40 L0 40 Z" fill="rgb(249 250 251)" />
-          </svg>
-        </div>
+      {/* Bottom curved divider — direct child of section so it anchors to section bottom */}
+      <div className="absolute bottom-0 left-0 right-0 overflow-hidden leading-none">
+        <svg viewBox="0 0 1440 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
+          <path d="M0 40 C360 0 1080 0 1440 40 L1440 40 L0 40 Z" fill="rgb(249 250 251)" />
+        </svg>
       </div>
     </section>
   );
