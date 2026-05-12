@@ -12,15 +12,14 @@ import { SparklesPartnersSection } from "@/components/blocks/sparkles-demo";
 function Hero() {
   return (
     <section className="relative h-screen min-h-150 flex items-center justify-center overflow-hidden">
-      <video
-        className="absolute inset-0 w-full h-full object-cover"
-        src="/videos/hero-logistics.mp4"
-        poster="/images/jhc-group-dot-com-post-hino-delivers-5-trucks-2017-rmtg4xtqt1r180ju3h0skbh9h1g2skls5x4x5n6wyg.jpg"
-        autoPlay
-        muted
-        loop
-        playsInline
-      />
+    <video
+      className="absolute inset-0 h-full w-full object-cover"
+      src="/videos/hero-logistics.mp4"
+      autoPlay
+      muted
+      loop
+      playsInline
+    />
       <div className="absolute inset-0 bg-linear-to-b from-black/60 via-black/50 to-black/70" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 text-center text-white">
