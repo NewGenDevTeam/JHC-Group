@@ -23,21 +23,52 @@ function Hero() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 text-center text-white">
         {/* 1. Badge */}
-        <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5 text-sm font-medium text-white/90 mb-6 animate-hero-reveal hero-badge">
+        <div
+          className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5 text-sm font-medium text-white/90 mb-6 hero-fade-item"
+          style={{ animationDelay: "0.2s" }}
+        >
           <span className="w-2 h-2 rounded-full bg-orange-400 animate-pulse" />
           Trusted Logistics Partner Since 1998
         </div>
-        {/* 2 & 3. Heading — line by line */}
+        {/* 2 & 3. Heading — word by word */}
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight max-w-4xl mx-auto">
-          <span className="block animate-hero-reveal hero-line1">Moving Malaysia&apos;s Supply Chain</span>
-          <span className="block text-orange-400 mt-1 animate-hero-reveal hero-line2">Forward with Precision</span>
+          <span className="block">
+            {(["Moving", "Malaysia’s", "Supply", "Chain"] as const).map((word, index) => (
+              <span
+                key={word}
+                className="hero-word"
+                style={{ animationDelay: `${0.45 + index * 0.28}s` }}
+              >
+                {word}
+                {index < 3 ? " " : ""}
+              </span>
+            ))}
+          </span>
+          <span className="block text-orange-400 mt-1">
+            {(["Forward", "with", "Precision"] as const).map((word, index) => (
+              <span
+                key={word}
+                className="hero-word"
+                style={{ animationDelay: `${0.45 + index * 0.28}s` }}
+              >
+                {word}
+                {index < 2 ? " " : ""}
+              </span>
+            ))}
+          </span>
         </h1>
         {/* 4. Paragraph */}
-        <p className="mt-6 text-lg sm:text-xl text-white/75 max-w-2xl mx-auto font-light leading-relaxed animate-hero-reveal hero-para">
+        <p
+          className="mt-6 text-lg sm:text-xl text-white/75 max-w-2xl mx-auto font-light leading-relaxed hero-fade-item"
+          style={{ animationDelay: "2.8s" }}
+        >
           End-to-end freight, cold chain, warehousing, and automotive logistics solutions — built on 25 years of Malaysian industry experience.
         </p>
         {/* 5. CTA buttons */}
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 animate-hero-reveal hero-cta">
+        <div
+          className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 hero-fade-item"
+          style={{ animationDelay: "3.2s" }}
+        >
           <Link
             href="/contact"
             className="px-8 py-3.5 rounded-full bg-orange-500 text-white font-semibold text-sm hover:bg-orange-600 transition-colors duration-200"

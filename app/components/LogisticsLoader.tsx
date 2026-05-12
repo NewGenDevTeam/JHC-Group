@@ -22,7 +22,7 @@ export default function LogisticsLoader() {
     <div
       role="status"
       aria-label="Loading JHC Group"
-      className={`fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-white select-none${
+      className={`fixed inset-0 z-9999 flex flex-col items-center justify-center bg-white select-none${
         fadeOut ? " loader-exit" : ""
       }`}
     >
@@ -42,7 +42,7 @@ export default function LogisticsLoader() {
           <TruckSVG />
         </div>
         {/* Road — matches truck width */}
-        <div className="w-[280px] h-1.5 rounded-full overflow-hidden bg-gray-100">
+        <div className="w-70 h-1.5 rounded-full overflow-hidden bg-gray-100">
           <div className="loader-road h-full w-full" />
         </div>
       </div>

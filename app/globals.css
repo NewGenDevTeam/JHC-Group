@@ -96,11 +96,51 @@ body {
   animation: heroReveal 700ms ease-out both;
 }
 
-.hero-badge  { animation-delay: 0.1s; }
-.hero-line1  { animation-delay: 0.3s; }
-.hero-line2  { animation-delay: 0.55s; }
-.hero-para   { animation-delay: 0.8s; }
-.hero-cta    { animation-delay: 1s; }
+/* ─── Word-by-word hero reveal ─── */
+@keyframes heroWordReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(36px) scale(0.98);
+    filter: blur(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes heroFadeReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(24px);
+    filter: blur(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.hero-word {
+  display: inline-block;
+  opacity: 0;
+  animation-name: heroWordReveal;
+  animation-duration: 1.6s;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  animation-fill-mode: both;
+  will-change: transform, opacity, filter;
+}
+
+.hero-fade-item {
+  opacity: 0;
+  animation-name: heroFadeReveal;
+  animation-duration: 1.4s;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  animation-fill-mode: both;
+  will-change: transform, opacity, filter;
+}
 
 .animate-slide-left {
   animation: slideInLeft 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
