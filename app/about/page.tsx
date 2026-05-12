@@ -205,19 +205,7 @@ export default function AboutPage() {
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid lg:grid-cols-2 gap-14 items-center">
-              <MotionReveal>
-                <div className="relative rounded-2xl overflow-hidden h-80 shadow-lg">
-                  <Image
-                    src="/images/jhc-group-dot-com-post-hino-delivers-5-trucks-2017-rmtg4xtqt1r180ju3h0skbh9h1g2skls5x4x5n6wyg.jpg"
-                    alt="JHC Group fleet"
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                  />
-                </div>
-              </MotionReveal>
-
-              <MotionReveal delay={100} direction="left">
+              <MotionReveal direction="left">
                 <span className="text-orange-500 text-sm font-semibold uppercase tracking-widest">
                   Operational Strength
                 </span>
@@ -243,6 +231,22 @@ export default function AboutPage() {
                     </li>
                   ))}
                 </ul>
+              </MotionReveal>
+
+              <MotionReveal delay={100}>
+                <div className="relative rounded-2xl overflow-hidden h-80 lg:h-96 shadow-lg">
+                  <video
+                    className="w-full h-full object-cover rounded-2xl"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                    aria-hidden="true"
+                  >
+                    <source src="/videos/people-tablet-and-supply-chain-in-logistics-at-wa-2025-12-17-14-31-23-utc.mp4" type="video/mp4" />
+                  </video>
+                </div>
               </MotionReveal>
             </div>
           </div>

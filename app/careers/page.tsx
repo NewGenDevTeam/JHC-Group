@@ -116,12 +116,12 @@ export default function CareersPage() {
       <main className="pt-16">
 
         {/* Hero */}
-        <section className="relative bg-gray-900 py-20 text-white text-center px-6 overflow-hidden">
+        <section className="relative bg-gray-900 py-28 text-white text-center px-6 overflow-hidden">
           <Image
             src="/images/jhc-group-dot-com-about-us-people.jpg"
             alt="JHC Group team"
             fill
-            className="object-cover opacity-20"
+            className="object-cover object-[center_25%] opacity-20"
           />
           <div className="relative z-10">
             <MotionReveal>

@@ -40,6 +40,11 @@ body {
   to   { opacity: 1; }
 }
 
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 @keyframes slideInLeft {
   from {
     opacity: 0;
@@ -69,6 +74,34 @@ body {
   animation: fadeIn 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
+.animate-fade-down {
+  animation: fadeDown 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Hero stagger delays */
+.delay-hero-1 { animation-delay: 100ms; }
+.delay-hero-2 { animation-delay: 280ms; }
+.delay-hero-3 { animation-delay: 460ms; }
+.delay-hero-4 { animation-delay: 600ms; }
+.delay-hero-5 { animation-delay: 760ms; }
+.delay-hero-6 { animation-delay: 940ms; }
+
+/* ─── Cinematic hero text reveal ─── */
+@keyframes heroReveal {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-hero-reveal {
+  animation: heroReveal 700ms ease-out both;
+}
+
+.hero-badge  { animation-delay: 0.1s; }
+.hero-line1  { animation-delay: 0.3s; }
+.hero-line2  { animation-delay: 0.55s; }
+.hero-para   { animation-delay: 0.8s; }
+.hero-cta    { animation-delay: 1s; }
+
 .animate-slide-left {
   animation: slideInLeft 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
@@ -87,6 +120,61 @@ body {
 .img-reveal {
   transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
               opacity   0.6s ease;
+}
+
+/* ─── Logistics page loader ─── */
+@keyframes loaderTruck {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-2px); }
+}
+
+@keyframes loaderRoadMove {
+  from { background-position: 0 0; }
+  to   { background-position: -40px 0; }
+}
+
+@keyframes loaderProgress {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+@keyframes loaderDot {
+  0%, 100% { opacity: 0.2; }
+  50%       { opacity: 1; }
+}
+
+@keyframes loaderExit {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+.loader-truck {
+  animation: loaderTruck 0.9s ease-in-out infinite;
+}
+
+.loader-road {
+  background: repeating-linear-gradient(
+    to right,
+    #f97316 0px,
+    #f97316 20px,
+    transparent 20px,
+    transparent 40px
+  );
+  animation: loaderRoadMove 0.6s linear infinite;
+}
+
+.loader-progress {
+  transform-origin: left center;
+  animation: loaderProgress 1.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.loader-dot-1 { animation: loaderDot 1.4s ease-in-out 0s infinite; }
+.loader-dot-2 { animation: loaderDot 1.4s ease-in-out 0.25s infinite; }
+.loader-dot-3 { animation: loaderDot 1.4s ease-in-out 0.5s infinite; }
+
+.loader-exit {
+  animation: loaderExit 0.4s ease-out forwards;
+  pointer-events: none;
 }
 
 /* ─── Client logo marquee ─── */

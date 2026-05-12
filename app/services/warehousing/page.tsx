@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
@@ -110,13 +109,17 @@ export default function WarehousingPage() {
 
               <MotionReveal delay={100}>
                 <div className="relative rounded-2xl overflow-hidden h-80 shadow-lg">
-                  <Image
-                    src="/images/jhc-group-dot-com-about-us-1.jpg"
-                    alt="JHC Group warehouse"
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                  />
+                  <video
+                    className="w-full h-full object-cover rounded-2xl"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                    aria-hidden="true"
+                  >
+                    <source src="/videos/supply-chain-teamwork-and-man-with-boxes-in-wareh-2025-12-17-15-39-23-utc.mp4" type="video/mp4" />
+                  </video>
                 </div>
               </MotionReveal>
             </div>

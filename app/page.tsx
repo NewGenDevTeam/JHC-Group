@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -23,18 +22,22 @@ function Hero() {
       <div className="absolute inset-0 bg-linear-to-b from-black/60 via-black/50 to-black/70" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 text-center text-white">
-        <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5 text-sm font-medium text-white/90 mb-6">
+        {/* 1. Badge */}
+        <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5 text-sm font-medium text-white/90 mb-6 animate-hero-reveal hero-badge">
           <span className="w-2 h-2 rounded-full bg-orange-400 animate-pulse" />
           Trusted Logistics Partner Since 1998
         </div>
+        {/* 2 & 3. Heading — line by line */}
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight max-w-4xl mx-auto">
-          Moving Malaysia&apos;s Supply Chain
-          <span className="block text-orange-400 mt-1">Forward with Precision</span>
+          <span className="block animate-hero-reveal hero-line1">Moving Malaysia&apos;s Supply Chain</span>
+          <span className="block text-orange-400 mt-1 animate-hero-reveal hero-line2">Forward with Precision</span>
         </h1>
-        <p className="mt-6 text-lg sm:text-xl text-white/75 max-w-2xl mx-auto font-light leading-relaxed">
+        {/* 4. Paragraph */}
+        <p className="mt-6 text-lg sm:text-xl text-white/75 max-w-2xl mx-auto font-light leading-relaxed animate-hero-reveal hero-para">
           End-to-end freight, cold chain, warehousing, and automotive logistics solutions — built on 25 years of Malaysian industry experience.
         </p>
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+        {/* 5. CTA buttons */}
+        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 animate-hero-reveal hero-cta">
           <Link
             href="/contact"
             className="px-8 py-3.5 rounded-full bg-orange-500 text-white font-semibold text-sm hover:bg-orange-600 transition-colors duration-200"
@@ -50,7 +53,8 @@ function Hero() {
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/50">
+      {/* Scroll indicator — fades in last */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/50 animate-fade-in delay-hero-6">
         <svg className="w-6 h-6 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
         </svg>
@@ -290,6 +294,48 @@ function WhyChoose() {
             </MotionReveal>
           ))}
         </div>
+
+        {/* Technology & Inventory Management */}
+        <MotionReveal delay={360}>
+          <div className="mt-12 grid lg:grid-cols-2 gap-10 items-center bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
+            <div>
+              <span className="text-orange-500 text-xs font-semibold uppercase tracking-widest">
+                Technology-Driven
+              </span>
+              <h3 className="mt-3 text-xl sm:text-2xl font-bold text-gray-900 leading-snug">
+                Digital Inventory &amp; Real-Time Tracking
+              </h3>
+              <p className="mt-4 text-gray-500 text-sm leading-relaxed">
+                Our warehouse teams use digital tools and WMS platforms to maintain full stock visibility, reduce handling errors, and keep every client updated in real time — from intake to dispatch.
+              </p>
+              <ul className="mt-5 space-y-2">
+                {[
+                  "Real-time WMS stock visibility",
+                  "Tablet-based receiving & dispatch",
+                  "Barcode scanning & labelling",
+                ].map((pt) => (
+                  <li key={pt} className="flex items-center gap-2.5 text-sm text-gray-600">
+                    <span className="w-1.5 h-1.5 rounded-full bg-orange-500 shrink-0" />
+                    {pt}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="relative rounded-2xl overflow-hidden h-52 lg:h-60 shadow-md">
+              <video
+                className="w-full h-full object-cover rounded-2xl"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                aria-hidden="true"
+              >
+                <source src="/videos/warehouse-worker-smiling-using-tablet-for-inventor-2025-12-17-21-44-11-utc.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
+        </MotionReveal>
       </div>
     </section>
   );
@@ -339,13 +385,17 @@ function Coverage() {
 
           <MotionReveal delay={100}>
             <div className="relative rounded-2xl overflow-hidden h-80 lg:h-105 shadow-lg">
-              <Image
-                src="/images/jhc-group-dot-com-about-us-1.jpg"
-                alt="JHC Group nationwide logistics operations"
-                fill
-                className="object-cover img-reveal"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
+              <video
+                className="w-full h-full object-cover rounded-2xl"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                aria-hidden="true"
+              >
+                <source src="/videos/truck-and-cars-travel-along-rural-highway-2025-12-17-19-41-43-utc.mp4" type="video/mp4" />
+              </video>
               <div className="absolute inset-0 bg-linear-to-t from-black/40 to-transparent" />
               <div className="absolute bottom-6 left-6 right-6">
                 <div className="bg-white/95 backdrop-blur-sm rounded-xl px-5 py-4">
