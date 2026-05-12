@@ -39,3 +39,17 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Claude local files
+.claude/
+.claude
+.claude.json
+CLAUDE.md
+CLAUDE.local.md
+
+# Large local video files
+public/videos/
+
+# Ignore raw / large local videos
+public/videos/*
+!public/videos/hero-logistics.mp4
