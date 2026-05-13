@@ -14,9 +14,8 @@ export const metadata: Metadata = {
 const industries = [
   {
     title: "Automotive",
-    icon: "🚗",
-    color: "border-red-200 bg-red-50",
-    accent: "text-red-600",
+    image: "/images/industries/automotive.jpg",
+    color: "border-gray-100 bg-white",
     desc: "JHC Group is a trusted logistics partner to Malaysia's automotive sector — supporting OEM manufacturers, importers, and dealership groups with PDI, compound management, and nationwide vehicle distribution.",
     services: [
       "Pre-Delivery Inspection (PDI)",
@@ -29,9 +28,8 @@ const industries = [
   },
   {
     title: "FMCG",
-    icon: "📦",
-    color: "border-orange-200 bg-orange-50",
-    accent: "text-orange-600",
+    image: "/images/industries/fmcg.jpg",
+    color: "border-gray-100 bg-white",
     desc: "Fast-moving consumer goods demand speed, visibility, and accuracy. JHC Group's warehousing, pick-and-pack, and distribution capabilities are built to handle high-volume FMCG supply chains efficiently.",
     services: [
       "High-volume warehouse fulfilment",
@@ -44,9 +42,8 @@ const industries = [
   },
   {
     title: "Manufacturing",
-    icon: "🏭",
-    color: "border-blue-200 bg-blue-50",
-    accent: "text-blue-600",
+    image: "/images/industries/manufacturing.jpg",
+    color: "border-gray-100 bg-white",
     desc: "Manufacturers rely on JHC Group to keep raw materials arriving and finished goods moving. We support inbound components via import freight and outbound products through export forwarding and domestic distribution.",
     services: [
       "Inbound raw material logistics",
@@ -59,9 +56,8 @@ const industries = [
   },
   {
     title: "Cold Chain",
-    icon: "❄️",
-    color: "border-cyan-200 bg-cyan-50",
-    accent: "text-cyan-600",
+    image: "/images/industries/cold-chain.jpg",
+    color: "border-gray-100 bg-white",
     desc: "From fresh produce and frozen food to pharmaceutical products, our dedicated cold chain infrastructure ensures temperature integrity at every stage — collection, transit, storage, and delivery.",
     services: [
       "Reefer transport 2°C to 25°C",
@@ -74,9 +70,8 @@ const industries = [
   },
   {
     title: "Industrial Supply Chain",
-    icon: "⚙️",
-    color: "border-gray-200 bg-gray-50",
-    accent: "text-gray-600",
+    image: "/images/industries/industrial-supply.jpg",
+    color: "border-gray-100 bg-white",
     desc: "For industrial and heavy cargo — machinery, equipment, and project goods — JHC Group provides reliable import, export, and local transport with specialist handling capabilities.",
     services: [
       "Project & break-bulk cargo",
@@ -115,10 +110,19 @@ export default function IndustriesPage() {
           <div className="max-w-7xl mx-auto px-6 space-y-12">
             {industries.map((ind, i) => (
               <MotionReveal key={ind.title} delay={i * 60}>
-                <div className={`rounded-2xl border ${ind.color} p-8`}>
+                <div className={`rounded-2xl border ${ind.color} p-8 shadow-sm`}>
                   <div className="grid md:grid-cols-3 gap-8">
                     <div className="md:col-span-1">
-                      <div className="text-4xl mb-4">{ind.icon}</div>
+                      {/* Industry image banner */}
+                      <div className="group relative overflow-hidden rounded-xl h-40 mb-5">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={ind.image}
+                          alt={ind.title}
+                          className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        />
+                        <div className="absolute inset-0 bg-black/50 group-hover:bg-black/65 transition-colors duration-300" />
+                      </div>
                       <h2 className="text-2xl font-bold text-gray-900">{ind.title}</h2>
                       <p className="mt-3 text-gray-600 text-sm leading-relaxed">{ind.desc}</p>
                       <Link
