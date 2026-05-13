@@ -89,7 +89,7 @@ function ApplyForm({ positionTitle }: { positionTitle: string }) {
       </div>
       <div>
         <label className="block text-sm font-medium text-gray-700 mb-1.5">Phone</label>
-        <input type="tel" name="phone" value={form.phone} onChange={handleChange} placeholder="+603-5115 0263" className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent transition" />
+        <input type="tel" name="phone" value={form.phone} onChange={handleChange} placeholder="+6012-345 6789" className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent transition" />
       </div>
       <div>
         <label className="block text-sm font-medium text-gray-700 mb-1.5">Position Applied For</label>

@@ -476,7 +476,7 @@ function ContactSection() {
               </a>
 
               <a
-                href="https://wa.me/60123456789"
+                href="https://wa.me/60163063111"
                 className="flex items-center gap-4 p-4 rounded-xl bg-white border border-gray-100 hover:border-orange-200 transition-all group"
               >
                 <div className="w-10 h-10 rounded-lg bg-orange-50 flex items-center justify-center text-orange-500 group-hover:bg-orange-500 group-hover:text-white transition-colors">
@@ -486,7 +486,7 @@ function ContactSection() {
                 </div>
                 <div>
                   <p className="text-xs text-gray-400 font-medium">WhatsApp</p>
-                  <p className="text-sm font-semibold text-gray-800">+603-5115 0263</p>
+                  <p className="text-sm font-semibold text-gray-800">+6016-306 3111</p>
                 </div>
               </a>
             </div>

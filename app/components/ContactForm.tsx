@@ -74,7 +74,7 @@ export default function ContactForm() {
             required
             value={form.name}
             onChange={handleChange}
-            placeholder="Ahmad Faiz"
+            placeholder="Name"
             className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent transition"
           />
         </div>
@@ -87,7 +87,7 @@ export default function ContactForm() {
             name="company"
             value={form.company}
             onChange={handleChange}
-            placeholder="Your Company Sdn Bhd"
+            placeholder="Your Company"
             className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent transition"
           />
         </div>
@@ -117,7 +117,7 @@ export default function ContactForm() {
             name="phone"
             value={form.phone}
             onChange={handleChange}
-            placeholder="+603-5115 0263"
+            placeholder="+6012-345 6789"
             className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent transition"
           />
         </div>
