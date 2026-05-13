@@ -277,19 +277,37 @@ export default function AboutPage() {
         {/* Certifications */}
         <section className="py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-6">
-            <MotionReveal>
-              <div className="text-center max-w-xl mx-auto mb-14">
-                <span className="text-orange-500 text-sm font-semibold uppercase tracking-widest">
-                  Standards &amp; Compliance
-                </span>
-                <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-gray-900">
-                  Certifications
-                </h2>
-                <p className="mt-4 text-gray-500 text-base">
-                  We operate to internationally recognised standards so your cargo moves with confidence.
-                </p>
+          <MotionReveal>
+            <div className="text-center max-w-xl mx-auto mb-14">
+              <span className="text-orange-500 text-sm font-semibold uppercase tracking-widest">
+                Standards &amp; Compliance
+              </span>
+
+              <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-gray-900">
+                Certifications
+              </h2>
+
+              <p className="mt-4 text-gray-500 text-base">
+                We operate to internationally recognised standards so your cargo moves with confidence.
+              </p>
+
+              <div className="mt-10 mb-14 flex w-full justify-center px-4">
+                <div className="flex flex-wrap items-center justify-center gap-10">
+                  <img
+                    src="/images/cert-logo-1.png"
+                    alt="ISO 9001:2015 Certification"
+                    className="h-32 md:h-44 w-auto object-contain"
+                  />
+
+                  <img
+                    src="/images/cert-logo-2.png"
+                    alt="ISO 39001:2012 Certification"
+                    className="h-32 md:h-44 w-auto object-contain"
+                  />
+                </div>
               </div>
-            </MotionReveal>
+            </div>
+          </MotionReveal>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {certifications.map((cert, i) => (
