@@ -212,11 +212,11 @@ function ServicesOverview() {
 
 /* ─── Industries ─── */
 const industries = [
-  { label: "Automotive", icon: "🚗" },
-  { label: "FMCG", icon: "📦" },
-  { label: "Manufacturing", icon: "🏭" },
-  { label: "Cold Chain", icon: "❄️" },
-  { label: "Industrial Supply", icon: "⚙️" },
+  { label: "Automotive", image: "/images/industries/automotive.jpg" },
+  { label: "FMCG", image: "/images/industries/fmcg.jpg" },
+  { label: "Manufacturing", image: "/images/industries/manufacturing.jpg" },
+  { label: "Cold Chain", image: "/images/industries/cold-chain.jpg" },
+  { label: "Industrial Supply", image: "/images/industries/industrial-supply.jpg" },
 ];
 
 function IndustriesStrip() {
@@ -234,17 +234,28 @@ function IndustriesStrip() {
           </div>
         </MotionReveal>
 
-        <div className="flex flex-wrap justify-center gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
           {industries.map((ind, i) => (
             <MotionReveal key={ind.label} delay={i * 60}>
               <Link
                 href="/industries"
-                className="flex items-center gap-3 bg-gray-50 hover:bg-orange-50 border border-gray-100 hover:border-orange-200 rounded-2xl px-6 py-4 transition-all duration-200 group"
+                className="group relative overflow-hidden rounded-2xl h-[110px] block"
               >
-                <span className="text-2xl">{ind.icon}</span>
-                <span className="text-sm font-semibold text-gray-700 group-hover:text-orange-600 transition-colors">
-                  {ind.label}
-                </span>
+                {/* Background image */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={ind.image}
+                  alt={ind.label}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                {/* Dark overlay — slightly darker on hover */}
+                <div className="absolute inset-0 bg-black/50 group-hover:bg-black/65 transition-colors duration-300" />
+                {/* Label */}
+                <div className="relative z-10 flex items-end h-full p-4">
+                  <span className="text-white font-semibold text-sm leading-tight drop-shadow-sm">
+                    {ind.label}
+                  </span>
+                </div>
               </Link>
             </MotionReveal>
           ))}
