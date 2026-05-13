@@ -50,15 +50,15 @@ export function SparklesPartnersSection() {
           </div>
 
           {/* Bottom curved divider */}
-          <div className="absolute bottom-0 left-0 right-0 overflow-hidden leading-none">
-            <svg viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg" className="w-full">
+          <div className="absolute -bottom-px left-0 right-0 overflow-hidden leading-none">
+            <svg viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg" className="w-full block">
               <path d="M0 40 C360 0 1080 0 1440 40 L1440 120 L0 120 Z" fill="rgb(249 250 251)" />
             </svg>
           </div>
         </section>
 
         {/* Logo section outside black background */}
-        <div className="relative bg-gray-50 py-10">
+        <div className="relative bg-gray-50 py-10 -mt-px">
           <div className="relative mx-auto max-w-5xl">
             <InfiniteSlider duration={22} gap={24} className="flex items-center py-3">
               {clients.map(({ id, name, logo }) => (
